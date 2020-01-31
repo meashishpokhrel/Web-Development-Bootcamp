@@ -109,5 +109,16 @@ p{
 }
 .press-logo{
     width: 15%;
-    margin: 20px 20px 20px 50px;
+    margin: 20px 20px 50px;
+}
+
+/* Pricing */
+/* padding */
+#pricing{
+    padding: 10rem;
+    text-align: center;
+}
+
+.price-column{
+    padding: 3% 2%;
 }
