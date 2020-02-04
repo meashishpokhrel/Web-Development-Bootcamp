@@ -1,0 +1,30 @@
+ALL GIT COMMANDS THAT I WILL NEED.
+
+1.  git init
+2.  git add filename.extension
+3.  git add .
+4.  git status
+5.  ls | ls -a (shows all hidden files)
+6.  git commit -m "Your message"
+7.  git diff filename------->TO see the difference between newwer edited version and old version of the file
+8.  git checkout filename---->Stores the files to previous version 
+9.  git remote add origin [URL.git]
+10. git push -u origin master
+11. git rm --cached -r . ------->Removes all which are added to git staging area(git add. garepachi add hune file remove hucncha)
+12. git clone [URL]
+
+BRANCHING AND MERGING
+
+1.  git branch branch-name-------->creates a branch
+2.  git branch-------------------->lists the branches available
+3.  git checkout branch-name------>switches to another branch
+4.  git merge branch-name---------->merges two branches ( :q! to exit the editor)
+
+FORKING AND PULLING
+forking means to copy the code and it will make our own original copy of the code.
+Then can clone it and make changes to it.
+After i make changes to it can send pull request to the owner to merge it into the original repisitory.
+
+TO not upload some files to github (secret files) use gitignore
+1. Create file named .gitignore
+2. Inside the file write the filename which you want to ignore.
