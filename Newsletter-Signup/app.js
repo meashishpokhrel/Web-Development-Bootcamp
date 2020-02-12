@@ -46,14 +46,23 @@ var options={
 };
 request(options, function(err, resp, body){
     if (err){
-        console.log(err);
+        res.sendFile(__dirname + "/failure.html");
     }
     else{
-        console.log(resp.statusCode);
+        if(resp.statusCode == 200){
+            res.sendFile(__dirname + "/success.html" );
+        }
+        else{
+            res.sendFile(__dirname + "/failure.html" );        }
+        
     }
 });
 
 }); 
+
+app.post("/failure", function (req,res) { 
+    res.redirect("/");
+ });
   
 app.listen(3000, function(){
     console.log("listening 3000 port");
