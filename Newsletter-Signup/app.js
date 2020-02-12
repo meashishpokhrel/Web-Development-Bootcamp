@@ -64,10 +64,12 @@ app.post("/failure", function (req,res) {
     res.redirect("/");
  });
   
-app.listen(3000, function(){
+app.listen(process.env.PORT || 3000, function(){
     console.log("listening 3000 port");
 });
 
-
+//  API KEY
 //    c00364eb700ba3661f66f6c9b7125192-us4
+
+//  List id
 //  895b379718
