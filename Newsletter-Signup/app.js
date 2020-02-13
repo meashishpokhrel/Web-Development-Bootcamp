@@ -53,6 +53,7 @@ request(options, function(err, resp, body){
             res.sendFile(__dirname + "/success.html" );
         }
         else{
+            console.log(resp.statusCode);
             res.sendFile(__dirname + "/failure.html" );        }
         
     }
@@ -69,6 +70,7 @@ app.listen(process.env.PORT || 3000, function(){
 });
 
 //  API KEY
+//    c00364eb700ba3661f66f6c9b7125192-us4
 //    c00364eb700ba3661f66f6c9b7125192-us4
 
 //  List id
