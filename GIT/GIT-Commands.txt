@@ -28,3 +28,8 @@ After i make changes to it can send pull request to the owner to merge it into t
 TO not upload some files to github (secret files) use gitignore
 1. Create file named .gitignore
 2. Inside the file write the filename which you want to ignore.
+
+To login to Git form command line use::
+
+1. git config --global user.name "meashishpokhrel"
+2. git config --global user.email "meashishpokhrel@gmail.com"
