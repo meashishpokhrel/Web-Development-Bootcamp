@@ -4,20 +4,28 @@ const mongoose = require('mongoose');
 mongoose.connect("mongodb://localhost:27017/fruitsDB", { useNewUrlParser: true , useUnifiedTopology: true});
 
 const fruitSchema = new mongoose.Schema ({
-    name: String,
-    rating: Number,
+    name: {
+        type: String,
+         required: [true,"It must have name!!!"]
+    },
+    rating: {
+        type: Number,
+        min: 1,
+        max: 10
+    },
     review: String
-});
+}); 
 
 const Fruit = mongoose.model("Fruit", fruitSchema);
 
 const fruit = new Fruit ({
-    name: "Apple",
-    rating: 4,
+    // name: "Apple",
+    rating: 8,
     review: "Very nice"
 });
 
-//fruit.save();
+
+fruit.save();
 
 const personSchema = new mongoose.Schema({
     name: String,
@@ -31,7 +39,7 @@ const person = new Person ({
     Age: 18
 });
 
-person.save();
+//person.save();
 
 const kiwi = new Fruit ({
     name: "KIWI",
