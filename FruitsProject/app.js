@@ -29,17 +29,38 @@ fruit.save();
 
 const personSchema = new mongoose.Schema({
     name: String,
-    Age: Number
+    Age: Number,
+    favouriteFruit: fruitSchema
 });
 
 const Person = mongoose.model("Person", personSchema);
 
-const person = new Person ({
-    name: "Ashish",
-    Age: 18
-});
+const pineapple = new Fruit({
+    name: "pineapple",
+    rating: 8,
+    review: "garbage"
+})
 
-//person.save();
+const milk = new Fruit({
+    name: "milk",
+    rating: 8,
+    review: "garbage"
+})
+
+pineapple.save();
+milk.save();
+
+Person.updateOne({name: "Ashish"},{favouriteFruit: milk},function(err){
+
+});
+// const person = new Person ({
+//     name: "Ashish",
+//     Age: 18,
+//     favouriteFruit: pineapple
+// });
+
+// person.save();
+
 
 const kiwi = new Fruit ({
     name: "KIWI",
@@ -74,7 +95,7 @@ Fruit.find(function(err, fruits){
         console.log(err);
     }
     else{
-        mongoose.connection.close();
+        // mongoose.connection.close();
         // console.log(fruits);
         fruits.forEach(function(fruit){
             console.log(fruit.name);
