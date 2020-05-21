@@ -68,17 +68,13 @@ app.get("/",function(req,res){
 });
 
 app.post("/", function(req,res){
-    const item=(req.body.text);
+    const itemName=(req.body.text);
 
-    if (req.body.list === "Work List"){
-        workList.push(item);
-        res.redirect("/work");
-    }
-    else{
-        items.push(item);
-        res.redirect("/");
-    }
-    
+    const addedItem = new item({
+        name: itemName
+    });
+    addedItem.save();
+    res.redirect("/");
 });
 
 app.get("/work",function(req,res){
