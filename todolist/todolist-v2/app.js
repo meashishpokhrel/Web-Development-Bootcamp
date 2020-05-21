@@ -32,20 +32,39 @@ const item3 = new item ({
 });
 
 const defaultItems = [item1, item2, item3];
-item.insertMany(defaultItems,function(err){
-    if (err){
-        console.log(err);
-    }
-    else{
-        console.log("successfully added to the database");
-    }
-});
 
+
+
+// item.find(function(err, items){
+//     if (err){
+//         console.log(err);
+//     }
+//     else{
+//         items.forEach(function(fruit){
+//             console.log(fruit.name);
+//         });
+//     }
+// });
 
 
 app.get("/",function(req,res){
     
-    res.render("list",{listTitle:"Today",newlistItem:items});
+    item.find({}, function(err, itemsFound){
+        if (itemsFound.length === 0){
+            item.insertMany(defaultItems,function(err){
+                 if (err){
+                     console.log(err);
+                      }
+                     else{
+                     console.log("successfully added to the database");
+                        }
+                        });
+                        res.redirect("/");
+        }
+        else{
+            res.render("list",{listTitle:"Today",newlistItem:itemsFound});
+        }   
+    });
 });
 
 app.post("/", function(req,res){
