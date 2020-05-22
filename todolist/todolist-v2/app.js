@@ -11,7 +11,7 @@ app.set('view engine', 'ejs');
  app.use(bodyParser.urlencoded({extended: true}));
  app.use(express.static("public")); 
 
-mongoose.connect("mongodb://localhost:27017/tolistDB",{ useNewUrlParser: true , useUnifiedTopology: true});
+mongoose.connect("mongodb://localhost:27017/tolistDB",{ useNewUrlParser: true , useUnifiedTopology: true, useFindAndModify: false});
 
 const itemSchema = new mongoose.Schema({
     name: String
@@ -77,6 +77,15 @@ app.post("/", function(req,res){
     res.redirect("/");
 });
 
+app.post("/delete", function(req,res){
+    const checkedId = (req.body.checkbox);
+    item.findByIdAndRemove(checkedId, function(err){
+        if (!err){
+        console.log("delete success");
+        res.redirect("/");
+        }
+    });    
+});
 app.get("/work",function(req,res){
     res.render("list",{listTitle:"Work List",newlistItem:workList})
 });
