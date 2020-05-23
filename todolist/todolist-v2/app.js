@@ -75,12 +75,24 @@ app.get("/",function(req,res){
 
 app.post("/", function(req,res){
     const itemName=(req.body.text);
-
+    const itemList= req.body.list;
     const addedItem = new item({
         name: itemName
     });
-    addedItem.save();
-    res.redirect("/");
+
+    if (itemList === "Today"){
+        addedItem.save();
+        res.redirect("/");
+    }
+    else{
+        list.findOne({name: itemList}, function(err, foundList){
+            foundList.items.push(addedItem);
+            foundList.save();
+
+            res.redirect("/"+ itemList);
+        });
+    }
+    
 });
 
 app.post("/delete", function(req,res){
