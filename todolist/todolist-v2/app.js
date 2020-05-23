@@ -97,12 +97,20 @@ app.post("/", function(req,res){
 
 app.post("/delete", function(req,res){
     const checkedId = (req.body.checkbox);
-    item.findByIdAndRemove(checkedId, function(err){
-        if (!err){
-        console.log("delete success");
-        res.redirect("/");
-        }
-    });    
+    const listName = req.body.listName;
+
+    if (listName = "Today"){
+        item.findByIdAndRemove(checkedId, function(err){
+            if (!err){
+            console.log("delete success");
+            res.redirect("/");
+            }
+        });    
+    }
+    else{
+        
+    }
+    
 });
 
 app.get("/:customListName", function(req,res){
