@@ -33,3 +33,7 @@ To login to Git form command line use::
 
 1. git config --global user.name "meashishpokhrel"
 2. git config --global user.email "meashishpokhrel@gmail.com"
+
+After Replacing the Repisitory name:
+
+1. git remote set-url origin new_url
