@@ -1,0 +1,43 @@
+Generally we will use Heroku app to deploy.
+It will host in Git.
+
+TO DEPLOY YOUR APPLICATION WITH HEROKU::
+1. git init
+2. git add .
+3. git commit -m "commit"
+4. heroku login
+5. heroku create your-app-name
+6. Add Procfile inside project folder
+
+    web: node index.js
+
+7. listen on the correct port:
+    let port = process.env.PORT;
+    if (port == null || port == "") {
+        port = 8000;
+    }
+    app.listen(port);
+
+8. Open package.json file and add node version, below license::
+
+    "engines": {
+        "node": "10.x"
+    },
+
+9. create .gitignore file to ignore node modules:
+
+    /node_modules
+    npm-debug.log
+    .DS_Store
+    /*.env
+
+10. git add .
+11. git commit -m "added"
+12. git push heroku master
+
+
+
+To host Project with Database::
+
+We will use mongodb atlas free cloud server, AWS connections
+we will connect it to mongo shell (cluster):
