@@ -22,6 +22,11 @@ app.set('view engine', 'ejs');
 
 const article = mongoose.model("article",articleSchema);
 
+app.get("/article",function (req,res){
+    article.find({}, function(err, foundArticles){
+        res.send(foundArticles);
+    });
+});
 
 
 app.listen(3000, function(){
