@@ -21,14 +21,15 @@ app.set('view engine', 'ejs');
 };
 
 const article = mongoose.model("article",articleSchema);
+app.route("/articles")
 
-app.get("/articles",function (req,res){
+.get(function (req,res){
     article.find({}, function(err, foundArticles){
         res.send(foundArticles);
     });
-}); 
+})
 
-app.post("/articles", function(req,res){
+.post(function(req,res){
     const article1 = new article ({
         title: req.body.title,
         content: req.body.content
@@ -42,9 +43,9 @@ app.post("/articles", function(req,res){
             res.send(err);
         }
     });
-});
+})
 
-app.delete("/articles",function (req,res){
+.delete(function (req,res){
     article.deleteMany({}, function(err){
         if(!err){
             res.send("Succesfully Deleted all");
