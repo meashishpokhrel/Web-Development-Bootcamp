@@ -1,0 +1,39 @@
+1. Create a new Directory
+
+2. Initalise NPM.
+
+    npm init
+    npm init -y 
+
+3. Install body-parser,mongoose,ejs and express
+    npm i body-parser mongoose ejs express
+
+4. Create a new file named app.js and write server code::
+
+    const express = require ("express");
+    const bodyParser = require("body-parser");
+    const ejs = require ("ejs");
+    const mongoose = require ("mongoose");
+
+    const app = express();
+
+    app.set('view engine', 'ejs');
+
+
+    app.use(bodyParser.urlencoded({extended: true}));
+    app.use(express.static("public")); 
+
+    //MongoDB CODE HERE (mongodb connect)
+     mongoose.connect("mongodb://localhost:27017/wikiDB",{ useNewUrlParser: true , useUnifiedTopology: true, useFindAndModify: false});
+
+    app.listen(3000, function(){
+        console.log("listening on 3000 port:");
+    });
+
+Notes:
+When you copy the code into new machine use npm i to install all the modules and packages.
+
+TO SETUP MONGODB::
+
+1. mongoose.connect("mongodb://localhost:27017/your-DB",{ useNewUrlParser: true , useUnifiedTopology: true, useFindAndModify: false});
+
