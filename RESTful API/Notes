@@ -1,0 +1,17 @@
+INtroduction:
+
+To make Restful API's:
+1. Use Http request Verbs
+
+Http request verbs: GET, POST, PUT, PATCH, DELETE
+
+GET-->Read
+POST-->Create
+PUT, PATCH---> Update
+    {
+        PUT--Update datbase by sending entire new entry of databse
+        PATCH--only sending piece of data that need to be update.
+    }
+DELETE--->Delets
+    
+2. Use specific Pattern of Routes/Endpoint URLs
