@@ -15,3 +15,7 @@ PUT, PATCH---> Update
 DELETE--->Delets
     
 2. Use specific Pattern of Routes/Endpoint URLs
+
+Notes:
+
+Client----API----Server

@@ -26,6 +26,22 @@ app.get("/article",function (req,res){
     article.find({}, function(err, foundArticles){
         res.send(foundArticles);
     });
+}); 
+
+app.post("/articles", function(req,res){
+    const article1 = new article ({
+        title: req.body.title,
+        content: req.body.content
+    });
+
+    article1.save(function(err){
+        if (!err){
+            res.send("Succesfully added");
+        }
+        else{
+            res.send(err);
+        }
+    });
 });
 
 
