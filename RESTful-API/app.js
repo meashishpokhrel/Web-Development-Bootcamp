@@ -55,7 +55,19 @@ app.route("/articles")
         }
     });
 });
+//////////////////Specific Articles route////////
+app.route("/articles/:articleTitle")
 
+.get(function(req,res){
+    article.findOne({ title: req.params.articleTitle }, function(err, foundArticle){
+        if(foundArticle){
+            res.send(foundArticle);
+        }
+        else{
+            res.send("hi err");
+        }
+    });
+});
 
 app.listen(3000, function(){
     console.log("listening on 3000 port:");
