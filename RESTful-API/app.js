@@ -69,6 +69,10 @@ app.route("/articles/:articleTitle")
     });
 })
 
+//PUT is for updating sll the content i.e
+// If i were to replace only name and leave the 
+// content as it is then it is not possible in PUT for that we use PATCH.
+
 .put(function(req,res){
     article.update(
         {title: req.params.articleTitle},
@@ -80,6 +84,18 @@ app.route("/articles/:articleTitle")
             }
             else{
                 res.send("Fail");
+            }
+        }
+    );
+})
+
+.patch(function(req,res){
+    article.update(
+        {title: req.params.articleTitle},
+        {$set: req.body},
+        function(err){
+            if(!err){
+                res.send("Success");
             }
         }
     );
