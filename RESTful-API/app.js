@@ -67,6 +67,22 @@ app.route("/articles/:articleTitle")
             res.send("hi err");
         }
     });
+})
+
+.put(function(req,res){
+    article.update(
+        {title: req.params.articleTitle},
+        {title: req.body.title, content:req.body.content},
+        {overwrite: true},
+        function(err){
+            if(!err){
+                res.send("Success");
+            }
+            else{
+                res.send("Fail");
+            }
+        }
+    );
 });
 
 app.listen(3000, function(){
