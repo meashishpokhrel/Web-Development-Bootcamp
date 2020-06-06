@@ -80,7 +80,7 @@ app.route("/articles/:articleTitle")
         {overwrite: true},
         function(err){
             if(!err){
-                res.send("Success");
+                res.send("Success in PUT");
             }
             else{
                 res.send("Fail");
@@ -95,10 +95,18 @@ app.route("/articles/:articleTitle")
         {$set: req.body},
         function(err){
             if(!err){
-                res.send("Success");
+                res.send("Success in PATCH");
             }
         }
     );
+})
+
+.delete(function(req,res){
+    article.deleteOne({title: req.params.articleTitle}, function(err){
+        if(!err){
+            res.send("Success in DElete")
+        }
+    });
 });
 
 app.listen(3000, function(){
