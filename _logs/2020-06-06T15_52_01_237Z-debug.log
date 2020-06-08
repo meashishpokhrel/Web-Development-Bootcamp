@@ -1,0 +1,35 @@
+0 info it worked if it ends with ok
+1 verbose cli [
+1 verbose cli   'C:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'C:\\Users\\Ashish Boltar\\AppData\\Roaming\\npm\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'audit',
+1 verbose cli   'fix'
+1 verbose cli ]
+2 info using npm@6.14.5
+3 info using node@v12.16.3
+4 verbose npm-session a2d8da284cf22e46
+5 verbose stack Error: No package.json found: Cannot audit a project without a package.json
+5 verbose stack     at C:\Users\Ashish Boltar\AppData\Roaming\npm\node_modules\npm\lib\audit.js:164:19
+5 verbose stack     at tryCatcher (C:\Users\Ashish Boltar\AppData\Roaming\npm\node_modules\npm\node_modules\bluebird\js\release\util.js:16:23)
+5 verbose stack     at Promise._settlePromiseFromHandler (C:\Users\Ashish Boltar\AppData\Roaming\npm\node_modules\npm\node_modules\bluebird\js\release\promise.js:514:35)
+5 verbose stack     at Promise._settlePromise (C:\Users\Ashish Boltar\AppData\Roaming\npm\node_modules\npm\node_modules\bluebird\js\release\promise.js:574:18)
+5 verbose stack     at Promise._settlePromise0 (C:\Users\Ashish Boltar\AppData\Roaming\npm\node_modules\npm\node_modules\bluebird\js\release\promise.js:619:10)
+5 verbose stack     at Promise._settlePromises (C:\Users\Ashish Boltar\AppData\Roaming\npm\node_modules\npm\node_modules\bluebird\js\release\promise.js:699:18)
+5 verbose stack     at Promise._fulfill (C:\Users\Ashish Boltar\AppData\Roaming\npm\node_modules\npm\node_modules\bluebird\js\release\promise.js:643:18)
+5 verbose stack     at PromiseArray._resolve (C:\Users\Ashish Boltar\AppData\Roaming\npm\node_modules\npm\node_modules\bluebird\js\release\promise_array.js:126:19)
+5 verbose stack     at PromiseArray._promiseFulfilled (C:\Users\Ashish Boltar\AppData\Roaming\npm\node_modules\npm\node_modules\bluebird\js\release\promise_array.js:144:14)
+5 verbose stack     at PromiseArray._iterate (C:\Users\Ashish Boltar\AppData\Roaming\npm\node_modules\npm\node_modules\bluebird\js\release\promise_array.js:114:31)
+5 verbose stack     at PromiseArray.init [as _init] (C:\Users\Ashish Boltar\AppData\Roaming\npm\node_modules\npm\node_modules\bluebird\js\release\promise_array.js:78:10)
+5 verbose stack     at Promise._settlePromise (C:\Users\Ashish Boltar\AppData\Roaming\npm\node_modules\npm\node_modules\bluebird\js\release\promise.js:571:21)
+5 verbose stack     at Promise._settlePromise0 (C:\Users\Ashish Boltar\AppData\Roaming\npm\node_modules\npm\node_modules\bluebird\js\release\promise.js:619:10)
+5 verbose stack     at Promise._settlePromises (C:\Users\Ashish Boltar\AppData\Roaming\npm\node_modules\npm\node_modules\bluebird\js\release\promise.js:699:18)
+5 verbose stack     at Promise._fulfill (C:\Users\Ashish Boltar\AppData\Roaming\npm\node_modules\npm\node_modules\bluebird\js\release\promise.js:643:18)
+5 verbose stack     at PromiseArray._resolve (C:\Users\Ashish Boltar\AppData\Roaming\npm\node_modules\npm\node_modules\bluebird\js\release\promise_array.js:126:19)
+6 verbose cwd D:\LC\codes\Web-Development-Bootcamp
+7 verbose Windows_NT 10.0.17763
+8 verbose argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Users\\Ashish Boltar\\AppData\\Roaming\\npm\\node_modules\\npm\\bin\\npm-cli.js" "audit" "fix"
+9 verbose node v12.16.3
+10 verbose npm  v6.14.5
+11 error code EAUDITNOPJSON
+12 error audit No package.json found: Cannot audit a project without a package.json
+13 verbose exit [ 1, true ]
