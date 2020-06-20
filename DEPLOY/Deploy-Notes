@@ -41,3 +41,28 @@ To host Project with Database::
 
 We will use mongodb atlas free cloud server, AWS connections
 we will connect it to mongo shell (cluster):
+
+
+-----------------------------------------------------------------------------------------
+ALTERNATIVE
+
+1. heroku create your-app-name
+2. In package.json file in scripts add :
+    "scripts": {
+    "start": "node src/app.js"
+  }
+    
+    --> in start type node src/app.js 
+    [other eg: node server.js]
+    Basically the code to start your first file whether it is index.js or server.js or anything.
+    Heroku will interprate this as npm run start. so we should write the running code in start.
+
+3. const port = process.env.PORT || 3000
+4.  app.listen(port, () => {
+        console.log("Server Started on "+ port);
+    })
+    
+5. if fetch used: in Fetch remove localhost
+6. git add .
+7. git commit -m "commit"
+6. git push heroku master
